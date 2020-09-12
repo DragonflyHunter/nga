@@ -1,0 +1,134 @@
+@dark-blue-color: rgb(0,43,56); 
+@dark-green-color: rgb(0,124,100);
+@gray-color: #7496a0;
+@hover-nav-color: white;
+@badge-color: rgb(239,65,54);
+
+
+
+nav.aumentum-navbar,
+.aumentum-navbar a {
+  color: @gray-color;
+  background-color: @dark-blue-color;
+}
+nav.aumentum-navbar .dropdown-menu{
+  background-color: @dark-green-color;
+}
+
+.aumentum-navbar a:hover {
+  color: @hover-nav-color;
+}
+
+nav .nav-item .dropdown-menu,
+.dropdown-menu .dropdown-divider,
+.aumentum-navbar .navbar-nav .dropdown-menu, 
+.nav-item .dropdown-menu .dropdown-item {
+  background-color: @dark-green-color;
+  color: @hover-nav-color;
+}
+
+.nav-item .dropdown-menu .dropdown-item:hover {
+  color: @dark-blue-color;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: white;
+}
+.navbar-nav .dropdown-toggle::after {
+  display: none;
+}
+
+.badge {
+  background-color: @badge-color;
+}
+
+#mega-menu {
+  font-size: small;
+  background-color: @dark-green-color;
+  color: white;
+}
+
+#mega-menu * {
+  background-color: rgb(0,124,100);
+  color: white;
+}
+#mega-menu * a:hover {
+  color: @dark-blue-color;
+}
+.fa {
+  font-size: x-large;
+}
+i.fa:hover {
+  color: @dark-blue-color;
+}
+i.fa {
+  vertical-align: middle;
+}
+.fa-label {
+  padding-left: 10px;
+  vertical-align: middle;
+}
+.fa-label :hover {
+  color: @dark-blue-color;
+}
+.mega-group {
+  width: 200px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+.mega-group .group-name {
+
+  font-weight: bold;
+}
+.mega-group .subgroup .dropdown-item{
+  padding-left: 24px
+}
+.mega-group .dropdown-item {
+  padding-left: 0px;
+}
+
+.mega-group .navbar-item {
+  margin-left: 15px;
+}
+.mega-group hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid rgb(116, 150, 160);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#mega-menu input::placeholder {
+  color:@gray-color;
+}
+#mega-menu input {
+  background-color: rgb(214 241 225);
+  color: @dark-blue-color;
+}
+
+#mega-menu input:focus {
+    border-color: transparent;
+  }
+
+.btn-outline-secondary {
+  border-color: white;
+}
+
+#mega-menu #search-dropdown {
+  background-color: @dark-blue-color;
+}
+#mega-menu #search-dropdown .dropdown-item {
+  background-color: @dark-blue-color;
+}
+#mega-menu #search-dropdown .dropdown-item:hover {
+  background-color:  rgb(214 241 225);
+  color: @dark-blue-color;
+}
+
+
+/* You should place only common variables here */
+

@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h4>Task Manager</h4>
+        </div>
+        <div class="col-6">   
+            <div style="float: right">
+                <div class="btn-group" role="group">                           
+                    <div class="btn-group" role="group" ngbDropdown >
+                        <button id="actions" ngbDropdownToggle class="btn btn-dark" >
+                            Actions
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="actions" >
+                            <button ngbDropdownItem>Action 1</button>
+                            <button ngbDropdownItem>Action 2</button>
+                        </div>
+                    </div>     
+                    <button type="button" class="btn btn-danger">Cancel</button>
+                    <button type="button" class="btn btn-success">Save</button>        
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row"> 
+        <div class="col-3"></div>
+        <div class="col-6">
+            <h5>Active Tasks</h5>
+        </div>
+    </div>
+    <div class="row">      
+        <div class="col-3"></div>
+        <div class="col-6 ">
+            <ul ngbNav #nav="ngbNav" class="nav-pills">
+                <li ngbNavItem>
+                  <a ngbNavLink>First</a>
+                  <ng-template ngbNavContent>First content</ng-template>
+                </li>
+                <li ngbNavItem>
+                  <a ngbNavLink>Second</a>
+                  <ng-template ngbNavContent>Second content</ng-template>
+                </li>
+              </ul>
+            <div [ngbNavOutlet]="nav"></div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th scope="col" sortable="selected"></th>
+                  <th scope="col" sortable="module">Module</th>
+                  <th scope="col" sortable="task" >Task</th>
+                  <th scope="col" sortable="page" >Page</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let task of tasks">
+                    <td><input type="checkbox"></td> 
+                    <td>{{ task.module }}</td>
+                    <td>{{ task.task }}</td>
+                    <td>{{ task.page }}</td>
+                </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <h4>Data Analysis and Processing</h4>
+    </div>
+    <div class="col-6">   
+      <div style="float: right">
+        <div class="btn-group" role="group">               
+          <div class="btn-group" role="group" ngbDropdown >
+            <button id="taxyear" ngbDropdownToggle class="btn btn-secondary" >
+              Tax Year: 2020
+            </button>
+            <div ngbDropdownMenu aria-labelledby="taxyear" >
+              <button ngbDropdownItem>Tax Year: 2019</button>
+              <button ngbDropdownItem>Tax Year: 2018</button>
+            </div>
+          </div> 
+          <div class="btn-group" role="group" ngbDropdown >
+            <button id="actions" ngbDropdownToggle class="btn btn-dark" >
+              Actions
+            </button>
+            <div ngbDropdownMenu aria-labelledby="actions" >
+              <button ngbDropdownItem>Action 1</button>
+              <button ngbDropdownItem>Action 2</button>
+            </div>
+          </div>     
+          <button type="button" class="btn btn-danger">Cancel</button>
+          <button type="button" class="btn btn-success">Save</button>        
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<kendo-grid
+  [data]="gridView"
+  [height]="850"
+  [sortable]="{
+    allowUnsort: allowUnsort,
+    mode: multiple ? 'multiple' : 'single'
+    }"
+  [resizable]="true"
+  [sort]="sort"
+  (sortChange)="sortChange($event)"
+  >
+  <kendo-grid-column title="Action"></kendo-grid-column>
+  <kendo-grid-column title="Short Descr" field="shortDescr"></kendo-grid-column>
+  <kendo-grid-column title="Description" field="descr"></kendo-grid-column>
+  <kendo-grid-column title="Group" field="dspGroupDescr"></kendo-grid-column>
+  <kendo-grid-column title="Data Service" field="dataServiceDescr"></kendo-grid-column>
+  <kendo-grid-column title="Created By" field="createdBy"></kendo-grid-column>
+  <kendo-grid-column title="Created Date" field="createdDate"></kendo-grid-column>
+</kendo-grid>
+
+
