@@ -26,7 +26,7 @@
         </div>
       </li>
       <li class="nav-item dropdown position-static" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="id02" href="#" ngbDropdownToggle>Valuation</a>
+        <a class="nav-link dropdown-toggle" id="id02" href="#" ngbDropdownToggle (click)="search.focus()">Valuation</a>
         <div id="mega-menu" class="dropdown-menu w-100 top-auto mt-0" aria-labelledby="id02" ngbDropdownMenu>
           <div class="container-xl">
               <div class="row w-100">
@@ -34,14 +34,14 @@
                 <div class="col-8">
                   <div  ngbDropdown #myDrop="ngbDropdown">
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" ngbDropdownAnchor id="qsearch"  autocomplete="off" (focus)="searchFocus(myDrop, $event.target.value)" [value]="searchText" (input)="searchKeyPress(myDrop, $event.target.value)">
+                      <input #search type="text" class="form-control" ngbDropdownAnchor id="qsearch"  autocomplete="off" autofocus  (focus)="searchFocus(myDrop, $event.target.value)" [value]="searchText" (input)="searchKeyPress(myDrop, $event.target.value)">
                       <div class="input-group-append">
                         <button type="button" class="btn btn-outline-secondary">Quick Search</button>
                       </div>    
                       {{searchText}}                               
                       <div id="search-dropdown" class="dropdown-menu w-100" ngbDropdownMenu aria-labelledby="qsearch">
                         <button ngbDropdownItem *ngFor="let hint of searchHints">
-                          {{hint}} 
+                          <i [ngClass]="hint.icon"></i>{{hint.text}} 
                         </button>
                       </div>
                     </div>
@@ -67,86 +67,81 @@
 
                 </div>
               </div>
+              <div class="row w-100" style="padding-bottom: 10px">
+                <div class="col-2"></div>
+                <div class="col-8 recent-tasks">
+                    Recent Tasks:
+                    <a class="dropdown-item" href="#">Field Inspection</a>
+                    <a class="dropdown-item" href="#">Reports</a>
+                    <a class="dropdown-item" href="#">Workflow</a>
+                    <a class="dropdown-item" href="#">RPA Configuration</a>                
+                </div>              
+              </div>
               <div class="row w-100">
                 <div class= "mega-group">                  
                   <div class="group-name"><i class="fa fa-th"></i>  Characteristics</div>
                   <hr>
-                  <a class="dropdown-item" href="#">Real Property</a>
-                  <a class="dropdown-item" href="#">Mineral Characteristics</a>
-                  <a class="dropdown-item" href="#">Condominiums</a>
-                  <a class="dropdown-item" href="#">Sale Value Distribution</a>
-                  <a class="dropdown-item" href="#">Permits</a>    
-                  <a class="dropdown-item" href="#">Asking Rent</a>                 
+                  <a class="dropdown-item pinned" href="#">Real Property<i class="fas fa-thumbtack"></i><i class="fas fa-close"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Mineral Characteristics<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Condominiums<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Sale Value Distribution<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Permits<i class="fas fa-thumbtack"></i></a>    
+                  <a class="dropdown-item pinnable" href="#">Asking Rent<i class="fas fa-thumbtack"></i></a>                 
                 </div>
                 <div class= "mega-group">
                   <div class="group-name"><i class="fa fa-database"></i>  Mass Changes</div>
                   <hr>
-                  <a class="dropdown-item" href="#">Mass Update</a>
-                  <a class="dropdown-item" href="#">Mass Calculation</a>
-                  <a class="dropdown-item" href="#">Mass Value Conclusion</a>
-                  <a class="dropdown-item" href="#">Mass Event Creation</a>
-                  <a class="dropdown-item" href="#">Mass Direct Enrollment</a>
+                  <a class="dropdown-item pinnable" href="#">Mass Update<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Mass Calculation<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Mass Value Conclusion<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Mass Event Creation<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Mass Direct Enrollment<i class="fas fa-thumbtack"></i></a>
                 </div>
                 <div class="mega-group">
                   <div class="group-name"><i class="fa fa-pie-chart"></i>  Analysis</div>
                   <hr>
-                  <a class="dropdown-item" href="#">Cost Model</a>
-                  <a class="dropdown-item" href="#">External Rates</a>
-                  <a class="dropdown-item" href="#">Income</a>
-                  <a class="dropdown-item" href="#">Land</a>
-                  <a class="dropdown-item" href="#">Neighborhood</a>
-                  <a class="dropdown-item" href="#">Sales Ratio</a>
-                  <a class="dropdown-item" href="#">Study Group</a>
-                  <a class="dropdown-item" href="#">Visual</a>
-                  <a class="dropdown-item" href="#">Income Comparable</a>
-                  <a class="dropdown-item" href="#">Data Analysis and Processing</a>
-                  <a class="dropdown-item" href="#">Insights</a>
+                  <a class="dropdown-item pinnable" href="#">Cost Model<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">External Rates<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Income<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Land<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Neighborhood<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Sales Ratio<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Study Group<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Visual<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Income Comparable<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Data Analysis and Processing<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Insights<i class="fas fa-thumbtack"></i></a>
                 </div>
                 <div class= "mega-group">
                   <div class="group-name"><i class="fa fa-gears"></i>  Batch Processes</div>
                   <hr>
-                  <a class="dropdown-item" href="#">Batch Reports</a>
-                  <a class="dropdown-item" href="#">Benchmark Comp Sales</a>    
+                  <a class="dropdown-item pinnable" href="#">Batch Reports<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Benchmark Comp Sales<i class="fas fa-thumbtack"></i></a>    
                   <div class="subgroup">
                     <div class="group-name">Export</div>
-                    <a class="dropdown-item" href="#">E Gov</a>
-                    <a class="dropdown-item" href="#">Regression</a>   
+                    <a class="dropdown-item pinnable" href="#">E Gov<i class="fas fa-thumbtack"></i></a>
+                    <a class="dropdown-item pinnable" href="#">Regression<i class="fas fa-thumbtack"></i></a>   
                   </div>
                   <div class="subgroup">
                     <div class="group-name">Import</div>
-                    <a class="dropdown-item" href="#">Temporary Pins</a>       
-                    <a class="dropdown-item" href="#">Permit</a>    
+                    <a class="dropdown-item pinnable" href="#">Temporary Pins<i class="fas fa-thumbtack"></i></a>       
+                    <a class="dropdown-item pinnable" href="#">Permit<i class="fas fa-thumbtack"></i></a>    
                   </div>                             
                 </div>                
                 <div class="mega-group">
                   <div class="group-name"><i class="fa fa-usd"></i>  Valuation Management</div>
                   <hr>
-                  <a class="dropdown-item" href="#">Neighborhood Maintenance</a>
-                  <a class="dropdown-item" href="#">Model Control</a>
-                  <a class="dropdown-item" href="#">Cost</a>
-                  <a class="dropdown-item" href="#">Land </a>
-                  <a class="dropdown-item" href="#">Reconciled Value Model</a>
-                  <a class="dropdown-item" href="#">Modeled Income</a>
-                  <a class="dropdown-item" href="#">Mineral Claim Fee</a>
-                  <a class="dropdown-item" href="#">Comparable</a>
-                  <a class="dropdown-item" href="#">Regression</a>
+                  <a class="dropdown-item pinnable" href="#">Neighborhood Maintenance<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Model Control<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Cost<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Land <i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Reconciled Value Model<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Modeled Income<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Mineral Claim Fee<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Comparable<i class="fas fa-thumbtack"></i></a>
+                  <a class="dropdown-item pinnable" href="#">Regression<i class="fas fa-thumbtack"></i></a>
                 </div>
-              </div>
-              <div class="row w-100">
-                <div class="col-2"></div>
-                <div class="col-2">
-                  <a class="dropdown-item" href="#"><i class="fa fa-tablet"></i><span class="fa-label">Field Inspection</span></a>
-                </div>
-                <div class="col-2">
-                    <a class="dropdown-item" href="#"><i class="fa fa-print"></i><span class="fa-label">Reports</span></a>
-                </div>
-                <div class="col-2">
-                    <a class="dropdown-item" href="#"><i class="fa fa-sitemap"></i><span class="fa-label">Workflow</span></a>
-                </div>
-                <div class="col-2">
-                    <a class="dropdown-item" href="#"><i class="fa fa-cog"></i><span class="fa-label">RPA Configuration</span></a>
-                </div>               
-              </div>
+              </div>              
           </div>
         </div>
       </li>
@@ -262,8 +257,8 @@
           <a class="dropdown-item" href="tasks">Task: Tasks</a>
         </div>
       </div>
-      <div class="nav-item dropdown " ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="id11" href="#" ngbDropdownToggle><span class="fa fa-bell"></span><sup id="notification-icon" class="badge badge-pill badge-primary">2</sup></a>
+      <div class="nav-item dropdown" ngbDropdown>
+        <div class="nav-link dropdown-toggle" id="id11"  ngbDropdownToggle><span class="fa fa-bell"></span><sup id="notification-icon" class="badge badge-pill badge-primary">2</sup></div>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="id11" ngbDropdownMenu>
           <a class="dropdown-item" href="#">Workflow Split: OD2020-01-01-4567</a>
           <a class="dropdown-item" href="#">Workflow Merge: OD2020-04-30-7634</a>
@@ -282,9 +277,17 @@
         </div>
       </div>
       <div class="nav-item dropdown " ngbDropdown>
-        <div class="nav-link dropdown-toggle" id="id12" href="#" ngbDropdownToggle><span class="fa fa-user"></span></div>
+        <div class="nav-link dropdown-toggle" id="id12" href="#" ngbDropdownToggle><img class="user-portrait" src='../../assets/me.png'></div>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="id12" ngbDropdownMenu>
-          <div class="dropdown-item">Sean Butler</div>
+          <div class="dropdown-item">
+              <div style="display:inline;">
+                <img class="user-portrait-lg"  style="display:inline" src='../../assets/me.png'>
+                <div style="display:inline-block">
+                  <div>Sean Butler</div>
+                  <div>Lead Software Engineer</div>
+                </div>
+              </div>
+          </div>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Preferences...</a>
           <a class="dropdown-item" href="#">Help</a>

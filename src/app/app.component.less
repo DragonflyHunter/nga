@@ -1,34 +1,53 @@
+/* primary */
+@aumentum-dark-blue: rgb(0,43,56);
+@aumentum-cool-blue: rgb(102,147,161);
+@aumentum-mid-blue: rgb(24,75,87);
+@aumentum-green: rgb(0,124,100);
+@aumentum-gray: rgb(128,130,133);
+@aumentum-white: white;
+@aumentum-black: black;
 
-@font-family: Verdana;
+@aumentum-secondary-yellow: rgb(251,176,64);
+@aumentum-secondary-red: rgb(239,65,54);
+@aumentum-secondary-green: rgb(0,167,157);
+@aumentum-secondary-violet: rgb(130,106,175);
 
-@black-color: #212121;
-@dark-grey-1-color: #232427;
-@dark-grey-2-color: #37383D;
-@med-grey-1-color: #6D6D78;
-@med-grey-2-color: #93939C;
-@med-grey-3-color: #B2B2B8;
-@med-grey-4-color: #C3C3CA;
-@light-grey-1-color: #D4D4D9;
-@light-grey-2-color: #E6E7E9;
-@light-grey-3-color: #F4F5F7;
-@light-grey-4-color: #D5D4D9;
-@light-grey-5-color: #E8EAEC;
-@white-color: #FFFFFF;
+@button-primary: @aumentum-dark-blue;
+@button-secondary: @aumentum-gray;
+@button-danger: @aumentum-secondary-red;
+@button-success: @aumentum-green;
+@button-warning: @aumentum-secondary-yellow;
+@button-basic: @aumentum-gray;
+@button-default: @aumentum-white;
+@button-info: @aumentum-cool-blue;
 
-@orange-color: #FF8000;
-@yellow-color: #FFC946;
-@pale-yellow-color: #FCF8D9;
-@dark-blue-color: #28447E;
-@blue-color: #1472C2;
-@blue-2-color: #005885;
-@blue-3-color: #0072A8;
-@light-blue-color: #45B7E7;
-@light-blue-2-color: #45B7E7;
-@pale_blue_color: #D4EBF4;
-@green-color: #85AB44;
-@light-green-color: #E4E8D8;
-@pale-green-color: #F2F6EC;
-@red-color: #DC0A0A;
+@aumentum-control-group-color: rgb(192,192,192);
 
-@gray-color: #999;
-@sandy-color: #E3DECF;
+app-root .btn.btn-primary {
+    background-color: @button-primary;
+} 
+
+
+app-root .btn.btn-secondary {
+    background-color: @button-secondary;
+} 
+
+app-root .btn.btn-danger {
+    background-color: @button-danger;
+} 
+
+app-root .btn.btn-success {
+    background-color: @button-success;
+} 
+
+app-root .btn.btn-warning {
+    background-color: @button-warning;
+} 
+
+app-root .btn.btn-default {
+    background-color: @button-default;
+} 
+
+app-root .btn.btn-info {
+    background-color: @button-info;
+} 

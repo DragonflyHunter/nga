@@ -7,16 +7,15 @@
             <div style="float: right">
                 <div class="btn-group" role="group">                           
                     <div class="btn-group" role="group" ngbDropdown >
-                        <button id="actions" ngbDropdownToggle class="btn btn-dark" >
-                            Actions
+                        <button id="actions" ngbDropdownToggle class="btn btn-dark icon-button" >
+                            <span class="fa fa-star "></span>Actions
                         </button>
                         <div ngbDropdownMenu aria-labelledby="actions" >
                             <button ngbDropdownItem>Action 1</button>
                             <button ngbDropdownItem>Action 2</button>
                         </div>
                     </div>     
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                    <button type="button" class="btn btn-success">Save</button>        
+                    <button type="button" class="btn btn-secondary icon-button"><span class="fa fa-close "></span>Close</button>     
                 </div>
             </div> 
         </div>
@@ -24,43 +23,77 @@
 
     <div class="row"> 
         <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-6 control-group control-group-top">
             <h5>Active Tasks</h5>
+            <span class="info-text">These are tasks active in your current login session.  Save one or more tasks under a chosen name to remember the edits you have made and come back later to pick up where you left off.</span>
         </div>
     </div>
     <div class="row">      
         <div class="col-3"></div>
-        <div class="col-6 ">
-            <ul ngbNav #nav="ngbNav" class="nav-pills">
-                <li ngbNavItem>
-                  <a ngbNavLink>First</a>
-                  <ng-template ngbNavContent>First content</ng-template>
-                </li>
-                <li ngbNavItem>
-                  <a ngbNavLink>Second</a>
-                  <ng-template ngbNavContent>Second content</ng-template>
-                </li>
-              </ul>
-            <div [ngbNavOutlet]="nav"></div>
+        <div class="col-6 control-group control-group-bottom">
+            <button type="button" class="btn btn-danger icon-button toolbar"><span class="fa fa-trash "></span>End Tasks</button>
+            <button type="button" class="btn btn-success icon-button toolbar"><span class="fa fa-save"></span>Save Tasks</button>
+            <button type="button" class="btn btn-primary icon-button toolbar"><span class="fa fa-exchange"></span>Switch to Task</button>  
             <table class="table table-striped">
                 <thead>
-                <tr>
-                  <th scope="col" sortable="selected"></th>
-                  <th scope="col" sortable="module">Module</th>
-                  <th scope="col" sortable="task" >Task</th>
-                  <th scope="col" sortable="page" >Page</th>
-                </tr>
+                    <tr>
+                        <th scope="col" sortable="selected"></th>
+                        <th scope="col" sortable="module">Module</th>
+                        <th scope="col" sortable="task" >Task</th>
+                        <th scope="col" sortable="page" >Page</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let task of tasks">
-                    <td><input type="checkbox"></td> 
-                    <td>{{ task.module }}</td>
-                    <td>{{ task.task }}</td>
-                    <td>{{ task.page }}</td>
-                </tr>
+                    <tr *ngFor="let task of tasks">
+                        <td><input type="checkbox"></td> 
+                        <td>{{ task.module }}</td>
+                        <td>{{ task.task }}</td>
+                        <td>{{ task.page }}</td>
+                    </tr>    
                 </tbody>
-              </table>
+            </table>
         </div>
     </div>
-  </div>
+    <div class="row  saved-tasks "> 
+        <div class="col-3"></div>
+        <div class="col-6 control-group control-group-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-8" style="padding-left: 0px">
+                        <h5>Saved Tasks</h5>
+                    </div>
+                    <div class="col-4">
+                        Save expired sessions&nbsp;&nbsp;&nbsp;<kendo-switch [(ngModel)]="checked"></kendo-switch> 
+                    </div>
+                </div>
+            </div>
+            <span class="info-text">Tasks you have saved, or that have been automatically saved when your session expired. </span>
+        </div>
+    </div>
+    <div class="row saved-tasks-grid">      
+        <div class="col-3"></div>
+        <div class="col-6 control-group control-group-bottom">
+            <button type="button" class="btn btn-danger icon-button toolbar"><span class="fa fa-trash"></span>Delete Saved Task</button>
+            <button type="button" class="btn btn-primary icon-button toolbar"><span class="fa fa-play"></span>Activate Task</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" sortable="selected"></th>
+                        <th scope="col" sortable="name">Name</th>
+                        <th scope="col" sortable="date" >Date Time Saved</th>
+                        <th scope="col" sortable="Tasks" >List of Tasks</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let task of savedTasks">
+                        <td><input type="checkbox"></td> 
+                        <td>{{ task.name }}</td>
+                        <td>{{ task.date }}</td>
+                        <td>{{ task.task }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
   

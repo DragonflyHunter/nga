@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { GridModule } from '@progress/kendo-angular-grid';
 
@@ -11,6 +12,7 @@ import { GridComponent } from './grid/grid.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TasksComponent } from './tasks/tasks.component';
 import { ToolBarModule } from '@progress/kendo-angular-toolbar';
+import { InputsModule } from '@progress/kendo-angular-inputs';
 
 
 
@@ -31,7 +33,9 @@ import { ToolBarModule } from '@progress/kendo-angular-toolbar';
     NgbModule,
     GridModule,
     BrowserAnimationsModule,
-    ToolBarModule
+    ToolBarModule,
+    InputsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

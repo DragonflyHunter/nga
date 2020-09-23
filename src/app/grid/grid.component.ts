@@ -6,7 +6,7 @@ import { SortDescriptor, orderBy } from '@progress/kendo-data-query';
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.css']
+  styleUrls: ['./grid.component.less']
 })
 export class GridComponent {
     public multiple = false;

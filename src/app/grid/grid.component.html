@@ -7,7 +7,8 @@
       <div style="float: right">
         <div class="btn-group" role="group">               
           <div class="btn-group" role="group" ngbDropdown >
-            <button id="taxyear" ngbDropdownToggle class="btn btn-secondary" >
+            <button id="taxyear" ngbDropdownToggle class="btn btn-secondary icon-button" >
+              <span class="fa fa-calendar"></span>
               Tax Year: 2020
             </button>
             <div ngbDropdownMenu aria-labelledby="taxyear" >
@@ -16,7 +17,8 @@
             </div>
           </div> 
           <div class="btn-group" role="group" ngbDropdown >
-            <button id="actions" ngbDropdownToggle class="btn btn-dark" >
+            <button id="actions" ngbDropdownToggle class="btn btn-dark icon-button" >
+              <span class="fa fa-star"></span>
               Actions
             </button>
             <div ngbDropdownMenu aria-labelledby="actions" >
@@ -24,8 +26,9 @@
               <button ngbDropdownItem>Action 2</button>
             </div>
           </div>     
-          <button type="button" class="btn btn-danger">Cancel</button>
-          <button type="button" class="btn btn-success">Save</button>        
+          <button type="button" class="btn btn-secondary icon-button"><span class="fa fa-paperclip"></span>Attachments</button>
+          <button type="button" class="btn btn-danger icon-button"><span class="fa fa-close"></span>Cancel</button>
+          <button type="button" class="btn btn-success icon-button"><span class="fa fa-save"></span>Save</button>        
         </div>
       </div> 
     </div>

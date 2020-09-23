@@ -1,34 +1,30 @@
-@dark-blue-color: rgb(0,43,56); 
-@dark-green-color: rgb(0,124,100);
-@gray-color: #7496a0;
-@hover-nav-color: white;
-@badge-color: rgb(239,65,54);
+@import '../app.component.less';
 
 
 
 nav.aumentum-navbar,
 .aumentum-navbar a {
-  color: @gray-color;
-  background-color: @dark-blue-color;
+  color: @aumentum-gray;
+  background-color: @aumentum-dark-blue;
 }
 nav.aumentum-navbar .dropdown-menu{
-  background-color: @dark-green-color;
+  background-color: @aumentum-green;
 }
 
 .aumentum-navbar a:hover {
-  color: @hover-nav-color;
+  color: @aumentum-white;
 }
 
 nav .nav-item .dropdown-menu,
 .dropdown-menu .dropdown-divider,
 .aumentum-navbar .navbar-nav .dropdown-menu, 
 .nav-item .dropdown-menu .dropdown-item {
-  background-color: @dark-green-color;
-  color: @hover-nav-color;
+  background-color: @aumentum-green;
+  color: @aumentum-white;
 }
 
 .nav-item .dropdown-menu .dropdown-item:hover {
-  color: @dark-blue-color;
+  color: @aumentum-dark-blue;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -43,12 +39,12 @@ nav .nav-item .dropdown-menu,
 }
 
 .badge {
-  background-color: @badge-color;
+  background-color: @aumentum-secondary-red;
 }
 
 #mega-menu {
   font-size: small;
-  background-color: @dark-green-color;
+  background-color: @aumentum-green;
   color: white;
 }
 
@@ -57,13 +53,13 @@ nav .nav-item .dropdown-menu,
   color: white;
 }
 #mega-menu * a:hover {
-  color: @dark-blue-color;
+  color: @aumentum-dark-blue;
 }
 .fa {
   font-size: x-large;
 }
 i.fa:hover {
-  color: @dark-blue-color;
+  color: @aumentum-dark-blue;
 }
 i.fa {
   vertical-align: middle;
@@ -73,7 +69,7 @@ i.fa {
   vertical-align: middle;
 }
 .fa-label :hover {
-  color: @dark-blue-color;
+  color: @aumentum-dark-blue;
 }
 .mega-group {
   width: 200px;
@@ -103,11 +99,11 @@ i.fa {
 }
 
 #mega-menu input::placeholder {
-  color:@gray-color;
+  color:@aumentum-gray;
 }
 #mega-menu input {
   background-color: rgb(214 241 225);
-  color: @dark-blue-color;
+  color: @aumentum-dark-blue;
 }
 
 #mega-menu input:focus {
@@ -119,16 +115,79 @@ i.fa {
 }
 
 #mega-menu #search-dropdown {
-  background-color: @dark-blue-color;
+  background-color: @aumentum-dark-blue;
 }
 #mega-menu #search-dropdown .dropdown-item {
-  background-color: @dark-blue-color;
+  background-color: @aumentum-dark-blue;
 }
-#mega-menu #search-dropdown .dropdown-item:hover {
+#mega-menu #search-dropdown .dropdown-item:hover,
+#mega-menu #search-dropdown .dropdown-item:hover .fas {
   background-color:  rgb(214 241 225);
-  color: @dark-blue-color;
+  color: @aumentum-dark-blue;
+}
+#mega-menu #search-dropdown .dropdown-item .fas.fa-rocket {
+  color: @aumentum-secondary-green;
 }
 
+.nav-item.dropdown {
+  cursor: pointer;
+}
 
+#mega-menu .pinnable i.fas {  
+  display: none;
+  padding-left: 5px;
+}
+#mega-menu .pinnable:hover i.fas {
+  display: inline-block;
+  color: @aumentum-dark-blue;
+}
+
+#mega-menu .pinned i.fas {  
+  padding-left: 5px;
+  color: lightgreen;
+}
+#mega-menu .pinned i.fas.fa-close {  
+  display:none;
+}
+#mega-menu .pinned:hover i.fas.fa-thumbtack {
+  display: none;
+}
+
+#mega-menu .pinned:hover i.fas.fa-close {
+  display: inline-block;
+  color: @aumentum-dark-blue;
+}
+
+#mega-menu .recent-tasks .dropdown-item {
+  display: inline;
+}
+#mega-menu .recent-tasks {
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+#search-dropdown .fas {
+  background-color: @aumentum-dark-blue;
+  padding-right: 5px;
+  width: 40px;
+}
+
+.user-portrait {
+  width: 32px;
+  height: 32px;  
+  margin-right: 5px;
+  border-style: solid;
+  border-color: @aumentum-gray;
+  border-width: 3px;
+  border-radius: 18px;
+}
+.user-portrait-lg {
+  width: 96px;
+  height: 96px;  
+  margin-right: 10px;
+  border-style: solid;
+  border-color: @aumentum-gray;
+  border-width: 1px;  
+}
 /* You should place only common variables here */
 
