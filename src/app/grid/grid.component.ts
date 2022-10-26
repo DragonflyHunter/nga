@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { profiles } from './profiles';
 import { GridDataResult } from '@progress/kendo-angular-grid';
 import { SortDescriptor, orderBy } from '@progress/kendo-data-query';
+import { AppComponent, worker } from '../app.component';
 
 @Component({
   selector: 'app-grid',
@@ -20,6 +21,9 @@ export class GridComponent {
 
     constructor() {
         this.loadProfiles();
+    }
+    public saveClick() {
+        worker.postMessage("Sean was here.")
     }
 
     public sortChange(sort: SortDescriptor[]): void {

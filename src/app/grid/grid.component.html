@@ -3,9 +3,9 @@
     <div class="col-6">
       <h4>Data Analysis and Processing</h4>
     </div>
-    <div class="col-6">   
+    <div class="col-6">
       <div style="float: right">
-        <div class="btn-group" role="group">               
+        <div class="btn-group" role="group">
           <div class="btn-group" role="group" ngbDropdown >
             <button id="taxyear" ngbDropdownToggle class="btn btn-secondary icon-button" >
               <span class="fa fa-calendar"></span>
@@ -15,7 +15,7 @@
               <button ngbDropdownItem>Tax Year: 2019</button>
               <button ngbDropdownItem>Tax Year: 2018</button>
             </div>
-          </div> 
+          </div>
           <div class="btn-group" role="group" ngbDropdown >
             <button id="actions" ngbDropdownToggle class="btn btn-dark icon-button" >
               <span class="fa fa-star"></span>
@@ -25,19 +25,19 @@
               <button ngbDropdownItem>Action 1</button>
               <button ngbDropdownItem>Action 2</button>
             </div>
-          </div>     
+          </div>
           <button type="button" class="btn btn-secondary icon-button"><span class="fa fa-paperclip"></span>Attachments</button>
           <button type="button" class="btn btn-danger icon-button"><span class="fa fa-close"></span>Cancel</button>
-          <button type="button" class="btn btn-success icon-button"><span class="fa fa-save"></span>Save</button>        
+          <button type="button" class="btn btn-success icon-button" (click)="saveClick()"> <span class="fa fa-save"></span>Save</button>
         </div>
-      </div> 
+      </div>
     </div>
   </div>
 </div>
 
 <kendo-grid
   [data]="gridView"
-  [height]="850"
+  [height]="600"
   [sortable]="{
     allowUnsort: allowUnsort,
     mode: multiple ? 'multiple' : 'single'
